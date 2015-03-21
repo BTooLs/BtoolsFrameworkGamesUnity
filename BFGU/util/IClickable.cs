@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Btools.util {
+namespace BFGU.util {
 	public delegate void IClickableListener ();
 
 	/// <summary>

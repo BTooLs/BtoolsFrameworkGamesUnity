@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Btools.util {
+namespace BFGU.util {
 /// <summary>
 /// Move an object on all axis in bursts for a short period of time === shake.
 /// Do NOT move the object while is shaking (will be reset) (including other forces like gravity).
@@ -30,7 +30,7 @@ namespace Btools.util {
 				transformToShake = this.transform;
 			}
 		}
-	
+
 		// Update is called once per frame
 		void Update () {
 			if (this.shake.magnitude > 0.01) {

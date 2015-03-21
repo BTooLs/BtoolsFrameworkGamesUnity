@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Btools.util {
+namespace BGU.util {
 
-/// <summary>
-/// Move camera and animate between more fixed locations (position and rotation).
-/// TODO: use tween library if exists
-/// </summary>
+	/// <summary>
+	/// Move camera and animate between more fixed locations (position and rotation).
+	/// TODO Event delegates OnStart OnFinish
+	/// TODO: use tween library if exists
+	/// TODO queues
+	/// </summary>
 	public class TweenObject : MonoBehaviour {
 
 		/// <summary>
@@ -38,7 +40,7 @@ namespace Btools.util {
 			SaveCurrentPosition ("default");
 			this.isAnimatingNow = false;
 		}
-	
+
 		// Update is called once per frame
 		void Update () {
 			if (isAnimatingNow == true) {
@@ -76,7 +78,7 @@ namespace Btools.util {
 			}
 
 			TweenObjectPosition pos = positionsList [positionName];
-			TweenToPosition (pos.position, pos.rotation, this.defaultTweenDuration);	
+			TweenToPosition (pos.position, pos.rotation, this.defaultTweenDuration);
 		}
 
 		public void TweenToPosition (Vector3 position, Transform lookAt) {

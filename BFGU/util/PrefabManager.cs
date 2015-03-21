@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Btools.util {
-/// <summary>
-/// Used to fetch prefabs from the Resource folder.
-/// TODO: test with specific Types of assets.
-/// TODO: check for memory leaks or problems.
-/// </summary>
+namespace BFGU.util {
+	/// <summary>
+	/// Used to fetch prefabs from the Resource folder.
+	/// TODO: test with specific Types of assets.
+	/// TODO: check for memory leaks or problems.
+	/// TODO: Unload method
+	/// </summary>s
 	public class PrefabManager {
 		private static Dictionary<string, GameObject> cache = new Dictionary<string,GameObject> ();
 		public static string prefixPath = "";
@@ -26,7 +27,7 @@ namespace Btools.util {
 			if (cache.ContainsKey (path) == false) {
 				cache [path] = Resources.Load (path) as GameObject;
 			}
-		
+
 			return cache [path];
 		}
 

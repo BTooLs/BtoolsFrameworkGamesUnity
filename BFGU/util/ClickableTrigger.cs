@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace Btools.util {
+namespace BFGU.util {
 
-/// <summary>
-/// Clicks or touches game objects with colliders and a compoent that has IClickable
-/// TODO: ignore mouse drags too. 
-/// TODO: make dbl click/tap
-/// TODO: make it work with other input devices
-/// </summary>
+	/// <summary>
+	/// Clicks or touches game objects with colliders and a compoent that has IClickable
+	/// TODO: ignore mouse drags too.
+	/// TODO: make dbl click/tap
+	/// TODO: make it work with other input devices
+	/// </summary>
 	public class ClickableTrigger : MonoBehaviour {
 
 		public bool listenMouse = true;
@@ -85,7 +85,7 @@ namespace Btools.util {
 			if (this.listenTouch) {
 				if (Input.touchCount == 1) {
 					this.touch = Input.touches [0];
-				
+
 					if (this.touch.phase == TouchPhase.Began) {
 						this.ignoreTouch = false;
 					}
@@ -129,7 +129,7 @@ namespace Btools.util {
 		private void doClick () {
 			Ray ray = camera.ScreenPointToRay (this.clickPosition);
 			this.direction = ray.direction;
-		
+
 			if (this.beforeClick != null) {
 				this.beforeClick (this.clickPosition, this.direction);
 			}
@@ -160,7 +160,7 @@ namespace Btools.util {
 					}
 				}
 			}
-		
+
 			if (this.afterClick != null) {
 				this.afterClick (this.clickPosition, this.direction);
 			}

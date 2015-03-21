@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Btools.util {
+namespace BFGU.util {
 	public class TouchDragCamera : MonoBehaviour {
 
 		public bool dragEnabled = true;
@@ -15,7 +15,7 @@ namespace Btools.util {
 		public float boundryMaxX;
 		public float boundryMinZ;
 		public float boundryMaxZ;
-		
+
 		//optimization, do not create temp vars in Update
 		private float addToX;
 		private float addToZ;
@@ -43,8 +43,8 @@ namespace Btools.util {
 				}
 
 				transform.position = new Vector3 (
-				Mathf.Clamp (transform.position.x + addToX, boundryMinX, boundryMaxX), 
-				transform.position.y, 
+				Mathf.Clamp (transform.position.x + addToX, boundryMinX, boundryMaxX),
+				transform.position.y,
 				Mathf.Clamp (transform.position.z + addToZ, boundryMinZ, boundryMaxZ)
 				);
 
